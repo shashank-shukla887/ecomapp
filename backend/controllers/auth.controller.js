@@ -6,7 +6,7 @@ export const signup=async(req,res)=>{
         
         if(userExists.length>0){
             return res.status(400).json({message:'User already exists with this email. '});
-        }
+        } 
  
         const [result]=await connection.query(
             'INSERT INTO users (name,email,password) VALUES (?,?,?)',[name,email,password]
